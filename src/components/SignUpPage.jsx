@@ -1,14 +1,16 @@
 // components/SignUpPage.js
 import React from 'react';
 import InputField from './InputField';
-import Button from './Button';
-import LinkText from './LinkText';
 import { FaEnvelope, FaLock, FaIdBadge } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+
+  const handleSignUp = () => {
+    navigate('/login', { state: { message: 'Sign Up Successful! Please Sign in to Continue.' } });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -49,7 +51,7 @@ const SignUpPage = () => {
 
         <div className="mt-6">
           <button
-            onClick={() => navigate('/login')}
+            onClick={handleSignUp}
             className="w-full h-12 bg-[#1677ff] text-white text-lg font-semibold rounded-lg flex items-center justify-center hover:bg-[#1366cc] focus:outline-none shadow-md"
           >
             Sign-up
@@ -58,7 +60,7 @@ const SignUpPage = () => {
 
         <div className="text-center mt-4">
           <p>
-            Already have an account? <LinkText text="Sign In" link="/login" />
+            Already have an account? <span onClick={() => navigate('/login')} className="text-blue-500 cursor-pointer">Sign In</span>
           </p>
         </div>
       </div>
