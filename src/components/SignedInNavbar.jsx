@@ -35,14 +35,17 @@ const Navbar = () => {
         <div className="flex space-x-6 items-center relative">
           <button
             onClick={() => setShowDropdown(!showDropdown)}
-            className="relative"
+            className="relative z-10"
           >
             <FontAwesomeIcon icon={faBell} className="text-gray-700 text-lg" />
             <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
           </button>
 
           {showDropdown && (
-            <div className="absolute right-0 mt-20 w-80 bg-white shadow-lg rounded-lg z-50">
+            <div
+              className="absolute right-0 top-full mt-2 w-80 bg-white shadow-lg rounded-lg z-50"
+              style={{ marginTop: '0.5rem' }}
+            >
               <div className="p-4">
                 {notifications.map((notification) => (
                   <div key={notification.id} className="flex items-start space-x-4 mb-4">
