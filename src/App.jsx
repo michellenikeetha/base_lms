@@ -7,6 +7,7 @@ import SignUpPage from './components/SignUpPage';
 import ForgotPassword from './components/ForgotPassword';
 import CoursesPage from './components/CoursesPage';
 import ProfilePage from './components/ProfilePage';
+import AssignmentsPage from './components/AssignmentsPage';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/assignments" element={<AssignmentsPage />} />
       </Routes>
     </Router>
   );
