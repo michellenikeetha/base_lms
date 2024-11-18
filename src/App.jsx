@@ -8,6 +8,7 @@ import ForgotPassword from './components/ForgotPassword';
 import CoursesPage from './components/CoursesPage';
 import ProfilePage from './components/ProfilePage';
 import AssignmentsPage from './components/AssignmentsPage';
+import SubmittedAssignments from './components/SubmittedAssignments';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/assignments" element={<AssignmentsPage />} />
+        <Route path="/submitted-assignments" element={<SubmittedAssignments />} />
       </Routes>
     </Router>
   );
