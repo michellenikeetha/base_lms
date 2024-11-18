@@ -55,7 +55,7 @@ const SubmittedAssignments = () => {
               </div>
               <button
                 onClick={() => navigate('/submitted-assignments/edit-assignment')}
-                className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                className="bg-blue-500 text-white py-2 px-8 rounded-full hover:bg-blue-600"
               >
                 Edit
               </button>
