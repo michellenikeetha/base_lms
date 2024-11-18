@@ -14,6 +14,7 @@ import SubmitAssignment from './components/SubmitAssignment';
 import AnnouncementsPage from './components/AnnouncementsPage';
 import AnnouncementDetail from './components/AnnouncementDetail';
 import MyLearning from './components/MyLearningPage';
+import MyCoursePage from './components/MyCoursePage.jsx';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/announcements/ai-for-everyone" element={<AnnouncementDetail />} />
         <Route path="/my-learning" element={<MyLearning />} />
+        <Route path="/my-learning/my-course" element={<MyCoursePage />} />
       </Routes>
     </Router>
   );
