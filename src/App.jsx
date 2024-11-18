@@ -9,6 +9,7 @@ import CoursesPage from './components/CoursesPage';
 import ProfilePage from './components/ProfilePage';
 import AssignmentsPage from './components/AssignmentsPage';
 import SubmittedAssignments from './components/SubmittedAssignments';
+import EditAssignment from './components/EditAssignment';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/assignments" element={<AssignmentsPage />} />
         <Route path="/submitted-assignments" element={<SubmittedAssignments />} />
+        <Route path="/submitted-assignments/edit-assignment" element={<EditAssignment />} />
       </Routes>
     </Router>
   );
