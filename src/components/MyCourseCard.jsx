@@ -1,4 +1,3 @@
-// src/components/MyCourseCard.js
 import React from 'react';
 
 const MyCourseCard = ({ image, title, description, progress }) => {
@@ -14,10 +13,14 @@ const MyCourseCard = ({ image, title, description, progress }) => {
       </div>
       <button
         className={`${
-          progress !== undefined ? 'bg-black' : 'bg-blue-500'
+          progress === 100
+            ? 'bg-green-500' 
+            : progress !== undefined
+            ? 'bg-black' 
+            : 'bg-blue-500'
         } text-white px-4 py-2 rounded-lg hover:opacity-90`}
       >
-        {progress !== undefined ? 'Resume' : 'Get Started'}
+        {progress === 100 ? 'View Certificate' : progress !== undefined ? 'Resume' : 'Get Started'}
       </button>
     </div>
   );
