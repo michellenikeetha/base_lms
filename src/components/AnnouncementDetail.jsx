@@ -1,12 +1,12 @@
 // components/AnnouncementDetail.js
 import React from 'react';
-import Navbar from './Navbar';
+import SignedInNavbar from './SignedInNavbar';
 import { Link } from 'react-router-dom';
 
 const AnnouncementDetail = () => {
   return (
     <div>
-      <Navbar />
+      <SignedInNavbar />
       <div className="container mx-auto px-6 py-8">
         <h1 className="text-3xl font-bold mb-4">
           Announcements / <span className="text-blue-600">New Course: AI for Everyone</span>
