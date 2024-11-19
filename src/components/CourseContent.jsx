@@ -1,5 +1,7 @@
 import React from "react";
 import SignedInNavbar from "./SignedInNavbar";
+import programmingLanguagesImage from "../assets/langs.png";
+import flowchartImage from "../assets/flowchart.png";
 
 const CourseContent = () => {
   return (
@@ -35,8 +37,8 @@ const CourseContent = () => {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-2">Programming Languages</h2>
           <p className="text-gray-700 text-sm">
-            Programming languages are tools that allow us to write code in a
-            way that computers can interpret. Each language has its own syntax,
+            Programming languages are tools that allow us to write code in a way
+            that computers can interpret. Each language has its own syntax,
             structure, and purpose. Some of the popular programming languages
             are:
           </p>
@@ -46,8 +48,8 @@ const CourseContent = () => {
               science, AI, and web development.
             </li>
             <li>
-              <strong>Java:</strong> Known for its portability and often used
-              in enterprise applications and Android app development.
+              <strong>Java:</strong> Known for its portability and often used in
+              enterprise applications and Android app development.
             </li>
             <li>
               <strong>C++:</strong> Used for system programming, game
@@ -62,6 +64,12 @@ const CourseContent = () => {
               on Rails framework.
             </li>
           </ul>
+          <img
+            src={programmingLanguagesImage}
+            width={400}
+            alt="Programming Languages"
+            className="mt-4 rounded-lg shadow-lg"
+          />
           <p className="text-gray-700 text-sm mt-2">
             Programming languages are chosen based on the type of project,
             performance requirements, and developer preference.
@@ -73,8 +81,8 @@ const CourseContent = () => {
 
           <p className="text-gray-700 text-sm">
             <strong>Algorithms:</strong> Algorithms are step-by-step
-            instructions designed to solve a problem or perform a specific
-            task. Think of them as a recipe for solving a problem.
+            instructions designed to solve a problem or perform a specific task.
+            Think of them as a recipe for solving a problem.
           </p>
           <p className="text-gray-700 text-sm mt-2">
             For example, an algorithm for making a cup of tea could look like
@@ -98,16 +106,12 @@ const CourseContent = () => {
           <p className="text-gray-700 text-sm mt-2">
             Here's a simple flowchart for checking if a number is positive:
           </p>
-          <div className="border rounded-lg p-4 bg-gray-100 mt-4">
-            <p className="text-gray-600 text-sm mb-2">Flowchart Example:</p>
-            <ul className="list-none text-gray-700 text-sm">
-              <li>
-                <strong>Start</strong> → Input number → Check if number &gt; 0 →
-                Yes → "Positive" → End
-              </li>
-              <li>No → "Not Positive" → End</li>
-            </ul>
-          </div>
+          <img
+            src={flowchartImage}
+            width={400}
+            alt="Flowchart Example"
+            className="mt-4 rounded-lg shadow-lg"
+          />
         </div>
 
         <div className="mt-8">
