@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MyCourseCard from '../components/MyCourseCard';
 import SignedInNavbar from './SignedInNavbar';
+import { useNavigate } from 'react-router-dom';
 import course1 from '../assets/course1.png';
 import course2 from '../assets/course2.png';
 import course3 from '../assets/course3.png';
@@ -11,6 +12,7 @@ import course7 from '../assets/course7.png';
 
 const MyLearning = () => {
   const [activeTab, setActiveTab] = useState('in-progress');
+  const navigate = useNavigate();
 
   const inProgressCourses = [
     {
@@ -84,7 +86,10 @@ const MyLearning = () => {
           >
             Completed
           </button>
-          <button className="ml-auto px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+          <button 
+            onClick={() => navigate('/my-learning/grades')}
+            className="ml-auto px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300"
+          >
             Grades
           </button>
         </div>
