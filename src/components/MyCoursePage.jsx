@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { FileText, UploadCloud } from 'lucide-react';
 import SignedInNavbar from './SignedInNavbar';
+import { useNavigate } from 'react-router-dom';
 
 const MyCoursePage = () => {
   const [assignmentUploaded, setAssignmentUploaded] = useState(false);
+  const navigate = useNavigate();
 
   const handleAssignmentUpload = () => {
     setAssignmentUploaded(true);
@@ -75,9 +77,19 @@ const MyCoursePage = () => {
                 ))}
               </ul>
               {unit.progress > 0 ? (
-                <button className="bg-black text-white px-4 py-2 rounded-lg">Resume</button>
+                <button 
+                  onClick={() => navigate('/my-learning/my-course/course-content')}
+                  className="bg-black text-white px-4 py-2 rounded-lg"
+                >
+                  Resume
+                </button>
               ) : (
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Get Started</button>
+                <button 
+                  onClick={() => navigate('/my-learning/my-course/course-content')}
+                  className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                >
+                  Get Started
+                </button>
               )}
             </div>
           ))}

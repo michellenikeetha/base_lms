@@ -8,7 +8,7 @@ const MyCourseCard = ({ image, title, description, progress }) => {
         if (progress === 100) {
           navigate('my-learning/view-certificate'); 
         } else if (progress !== undefined) {
-          navigate('/my-learning/course-progress'); 
+          navigate('/my-learning/my-course'); 
         } else {
           navigate('/my-learning/my-course'); 
         }
