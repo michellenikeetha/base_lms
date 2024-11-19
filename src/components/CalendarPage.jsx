@@ -255,7 +255,7 @@ const CalendarPage = () => {
         )}
 
         {showNotification && (
-          <div className="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
+          <div className="fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2">
             <CheckCircle className="w-5 h-5" />
             Event created successfully!
           </div>
