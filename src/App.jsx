@@ -15,6 +15,7 @@ import AnnouncementsPage from './components/AnnouncementsPage';
 import AnnouncementDetail from './components/AnnouncementDetail';
 import MyLearning from './components/MyLearningPage';
 import MyCoursePage from './components/MyCoursePage.jsx';
+import MyGrades from "./components/MyGrades.jsx";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/announcements/ai-for-everyone" element={<AnnouncementDetail />} />
         <Route path="/my-learning" element={<MyLearning />} />
         <Route path="/my-learning/my-course" element={<MyCoursePage />} />
+        <Route path="/my-learning/grades" element={<MyGrades />} />
       </Routes>
     </Router>
   );
