@@ -17,6 +17,7 @@ import MyLearning from './components/MyLearningPage';
 import MyCoursePage from './components/MyCoursePage.jsx';
 import MyGrades from "./components/MyGrades.jsx";
 import CalendarPage from "./components/CalendarPage.jsx";
+import CourseContent from "./components/CourseContent.jsx";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/my-learning/my-course" element={<MyCoursePage />} />
         <Route path="/my-learning/grades" element={<MyGrades />} />
         <Route path="/calendar" element={<CalendarPage />} />
+        <Route path="/my-learning/my-course/course-content" element={<CourseContent />} />
       </Routes>
     </Router>
   );
