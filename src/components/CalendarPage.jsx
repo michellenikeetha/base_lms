@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { format, addMonths, subMonths } from "date-fns";
 import { Calendar, Plus, X, Clock, FileText, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "recharts";
+import SignedInNavbar from "./SignedInNavbar";
 
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -80,6 +81,8 @@ const CalendarPage = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
+      <SignedInNavbar />
+
       <main className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-3">
