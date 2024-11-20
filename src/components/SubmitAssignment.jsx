@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Upload, FileText, X, CheckCircle2 } from 'lucide-react';
+import { Upload, FileText, X, CheckCircle2, CheckCircle } from 'lucide-react';
 import SignedInNavbar from './SignedInNavbar';
 import { useNavigate } from 'react-router-dom';
 
 const SubmitAssignment = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -46,7 +47,13 @@ const SubmitAssignment = () => {
       alert("Please select a file to submit.");
       return;
     }
-    console.log("Submitting files:", selectedFiles);
+    setShowSuccess(true); 
+    setTimeout(() => setShowSuccess(false), 5000);
+    
+    setTimeout(() => {
+      setShowSuccess(false); 
+      navigate('/submitted-assignments'); 
+    }, 3000);
   };
 
   // const handleCancel = () => {
@@ -57,7 +64,7 @@ const SubmitAssignment = () => {
     <div className="bg-gray-50 min-h-screen">
       <SignedInNavbar />
       <div className="container mx-auto px-6 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-gray-800">Submit Your Assignment</h1>
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">Submit Your Assignment</h1>
 
         <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-50 max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-6">
@@ -160,6 +167,13 @@ const SubmitAssignment = () => {
             </button>
           </div>
         </div>
+
+        {showSuccess && (
+          <div className="fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 z-20">
+            <CheckCircle className="w-5 h-5" />
+            Assignment Submission Successful!
+          </div>
+        )}
       </div>
     </div>
   );
