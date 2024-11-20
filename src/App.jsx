@@ -20,8 +20,11 @@ import CalendarPage from "./components/CalendarPage.jsx";
 import CourseContent from "./components/CourseContent.jsx";
 import ProgrammingQuiz from "./components/Quiz.jsx";
 import ViewCertificate from "./components/ViewCertificate.jsx";
+import Clarity from '@microsoft/clarity';
 
 function App() {
+  const projectId = "p1n97ondqi"
+  Clarity.init(projectId);
   return (
     <Router>
       <Routes>
