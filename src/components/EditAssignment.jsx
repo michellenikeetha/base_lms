@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save, Trash2, X, FileText, Clock, Calendar, Loader } from 'lucide-react';
+import { Save, Trash2, X, FileText, Clock, Calendar, Loader, CheckCircle } from 'lucide-react';
 import SignedInNavbar from './SignedInNavbar';
 import pdfimg from '../assets/pdf.png';
 import { useNavigate } from 'react-router-dom';
@@ -11,8 +11,7 @@ const EditAssignment = () => {
   const [isRemoving, setIsRemoving] = useState(false);
   const [showFeedback, setShowFeedback] = useState(null); 
   const [isRemoved, setIsRemoved] = useState(false);
-
-  const assignment = {
+  const [assignment, setAssignment] = useState({
     title: 'Assignment 2',
     fileName: '20200742-assignment2.pdf',
     dueDate: 'Sunday, 11 August, 11:59 PM',
@@ -21,6 +20,10 @@ const EditAssignment = () => {
     fileSize: '2 GB',
     allowedFileTypes: ['PDF', 'DOCX'],
     maxFiles: 10,
+  });
+
+  const handleInputChange = (field, value) => {
+    setAssignment((prev) => ({ ...prev, [field]: value }));
   };
 
   const handleSaveChanges = () => {
@@ -46,22 +49,40 @@ const EditAssignment = () => {
       setIsRemoved(true);
       setIsModalOpen(false);
       setShowFeedback({ type: 'success', message: 'Submission removed successfully!' });
-      navigate('/assignments');
-    }, 2000);
+      
+      setTimeout(() => {
+        navigate('/assignments');
+      }, 3000);
+    }, 3000);
   };
 
   return (
     <div className="bg-gray-50 min-h-screen">
       <SignedInNavbar />
       <div className="container mx-auto px-6 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-gray-800">Edit Your Assignment</h1>
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">Edit Your Assignment</h1>
 
-        {showFeedback && (
+        {/* {showFeedback && (
           <div
             className={`p-4 rounded-lg mb-4 ${
               showFeedback.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
             }`}
           >
+            {showFeedback.message}
+          </div>
+        )} */}
+
+        {showFeedback && (
+          <div
+            className={`fixed top-20 right-4 px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 z-20 ${
+              showFeedback.type === 'success' ? 'bg-green-500 text-white' : 'bg-red-100 text-red-800'
+            }`}
+          >
+            {showFeedback.type === 'success' ? (
+              <CheckCircle className="w-5 h-5" />
+            ) : (
+              <X className="w-5 h-5" />
+            )}
             {showFeedback.message}
           </div>
         )}
@@ -83,7 +104,12 @@ const EditAssignment = () => {
                 <div>
                   <p className="flex items-center">
                     <FileText className="mr-2 text-blue-600" size={20} />
-                    <strong className="mr-2">File Name:</strong> {assignment.fileName}
+                    <input
+                      type="text"
+                      value={assignment.fileName}
+                      onChange={(e) => handleInputChange('fileName', e.target.value)}
+                      className="bg-transparent border-b-2 border-blue-100 focus:border-blue-500 focus:outline-none text-gray-800"
+                    />
                   </p>
                   <p className="flex items-center">
                     <Clock className="mr-2 text-blue-600" size={20} />

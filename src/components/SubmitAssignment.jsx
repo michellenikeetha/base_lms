@@ -64,7 +64,7 @@ const SubmitAssignment = () => {
     <div className="bg-gray-50 min-h-screen">
       <SignedInNavbar />
       <div className="container mx-auto px-6 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-gray-800">Submit Your Assignment</h1>
+        <h1 className="text-3xl font-bold mb-8 text-gray-800">Submit Your Assignment</h1>
 
         <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-50 max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-6">
