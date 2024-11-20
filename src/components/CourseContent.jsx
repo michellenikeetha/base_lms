@@ -2,15 +2,18 @@ import React from "react";
 import SignedInNavbar from "./SignedInNavbar";
 import programmingLanguagesImage from "../assets/langs.png";
 import flowchartImage from "../assets/flowchart.png";
+import { useNavigate } from 'react-router-dom';
 
 const CourseContent = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-gray-50 min-h-screen">
         <SignedInNavbar />
 
     <main className="container mx-auto px-4 py-8">
       <div className="max-w-5xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6">
+        <h1 className="text-3xl font-bold text-blue-600 mb-6">
           Unit 1: Introduction to Programming
         </h1>
 
@@ -127,6 +130,20 @@ const CourseContent = () => {
             thinking logically and creatively to solve challenges.
           </p>
         </div>
+
+        <div className="bg-blue-100 p-6 mt-8 rounded-lg shadow-lg text-center">
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">Ready to Test Your Knowledge?</h2>
+          <p className="text-gray-700 text-sm mb-6">
+            Take a short quiz to review what you've learned in Unit 1: Introduction to Programming.
+          </p>
+          <button
+            onClick={() => navigate("/quiz")} 
+            className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition"
+          >
+            Start Quiz
+          </button>
+        </div>
+
       </div>
     </main>
     </div>
