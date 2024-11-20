@@ -1,11 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Upload, FileText, X, CheckCircle2 } from 'lucide-react';
+import { Upload, FileText, X, CheckCircle2, CheckCircle } from 'lucide-react';
 import SignedInNavbar from './SignedInNavbar';
 import { useNavigate } from 'react-router-dom';
 
 const SubmitAssignment = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
@@ -46,7 +47,13 @@ const SubmitAssignment = () => {
       alert("Please select a file to submit.");
       return;
     }
-    console.log("Submitting files:", selectedFiles);
+    setShowSuccess(true); 
+    setTimeout(() => setShowSuccess(false), 5000);
+    
+    setTimeout(() => {
+      setShowSuccess(false); 
+      navigate('/submitted-assignments'); 
+    }, 3000);
   };
 
   // const handleCancel = () => {
@@ -160,6 +167,13 @@ const SubmitAssignment = () => {
             </button>
           </div>
         </div>
+
+        {showSuccess && (
+          <div className="fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 z-20">
+            <CheckCircle className="w-5 h-5" />
+            Assignment Submission Successful!
+          </div>
+        )}
       </div>
     </div>
   );
