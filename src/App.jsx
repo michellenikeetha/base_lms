@@ -19,6 +19,7 @@ import MyGrades from "./components/MyGrades.jsx";
 import CalendarPage from "./components/CalendarPage.jsx";
 import CourseContent from "./components/CourseContent.jsx";
 import ProgrammingQuiz from "./components/Quiz.jsx";
+import ViewCertificate from "./components/ViewCertificate.jsx";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/my-learning/my-course/course-content" element={<CourseContent />} />
         <Route path="/quiz" element={<ProgrammingQuiz />} />
+        <Route path="/my-learning/view-certificate" element={<ViewCertificate />} />
       </Routes>
     </Router>
   );

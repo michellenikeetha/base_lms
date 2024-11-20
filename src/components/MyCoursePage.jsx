@@ -100,7 +100,8 @@ const MyCoursePage = () => {
               <h3 className="text-blue-700 font-semibold">Upload Assignment 1</h3>
             </div>
             <button
-              onClick={handleAssignmentUpload}
+              // onClick={handleAssignmentUpload}
+              onClick={() => navigate('/assignments/submit-assignment')}
               className={`px-4 py-2 rounded-lg ${
                 assignmentUploaded
                   ? "bg-green-500 text-white"
