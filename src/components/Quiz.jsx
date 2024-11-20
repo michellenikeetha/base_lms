@@ -16,6 +16,11 @@ const ProgrammingQuiz = () => {
       q3: "True",
       q4: "Compile",
       q5: "Binary",
+      q6: "False",
+      q7: "Syntax Error Execution",
+      q8: "Lexical Analysis",
+      q9: "JavaScript",
+      q10: "True",
     };
 
     let points = 0;
@@ -117,16 +122,120 @@ const ProgrammingQuiz = () => {
                 />
               </div>
 
+              {/* Question 5 */}
               <div className="mb-6">
-                <h3 className="font-semibold">
-                  5. Computers understand code written in ________ form.
-                </h3>
+                <h3 className="font-semibold">5. Computers understand code written in ________ form.</h3>
                 <input
                   type="text"
                   name="q5"
                   onChange={(e) => handleChange(e, "q5")}
                   className="border border-gray-300 rounded-lg px-4 py-2 mt-2 w-full"
                   placeholder="Your answer here"
+                />
+              </div>
+
+              {/* Question 6 */}
+              <div className="mb-6">
+                <h3 className="font-semibold">6. Java is a low-level programming language. (True/False)</h3>
+                <input
+                  type="text"
+                  name="q6"
+                  onChange={(e) => handleChange(e, "q6")}
+                  className="border border-gray-300 rounded-lg px-4 py-2 mt-2 w-full"
+                  placeholder="True or False"
+                />
+              </div>
+
+              {/* Question 7 */}
+              <div className="mb-6">
+                <h3 className="font-semibold">7. Which of the following is NOT a step in the process of compiling code?</h3>
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="q7"
+                      value="Lexical Analysis"
+                      onChange={(e) => handleChange(e, "q7")}
+                      className="mr-2"
+                    />
+                    Lexical Analysis
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="q7"
+                      value="Code Optimization"
+                      onChange={(e) => handleChange(e, "q7")}
+                      className="mr-2"
+                    />
+                    Code Optimization
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="q7"
+                      value="Syntax Error Execution"
+                      onChange={(e) => handleChange(e, "q7")}
+                      className="mr-2"
+                    />
+                    Syntax Error Execution
+                  </label>
+                </div>
+                <div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="q7"
+                      value="Code Generation"
+                      onChange={(e) => handleChange(e, "q7")}
+                      className="mr-2"
+                    />
+                    Code Generation
+                  </label>
+                </div>
+              </div>
+
+              {/* Question 8 */}
+              <div className="mb-6">
+                <h3 className="font-semibold">
+                  8. The first step in the compilation process, where code is broken into tokens, is called ________.
+                </h3>
+                <input
+                  type="text"
+                  name="q8"
+                  onChange={(e) => handleChange(e, "q8")}
+                  className="border border-gray-300 rounded-lg px-4 py-2 mt-2 w-full"
+                  placeholder="Your answer here"
+                />
+              </div>
+
+              {/* Question 9 */}
+              <div className="mb-6">
+                <h3 className="font-semibold">
+                  9. ________ is a language commonly used for front-end web development.
+                </h3>
+                <input
+                  type="text"
+                  name="q9"
+                  onChange={(e) => handleChange(e, "q9")}
+                  className="border border-gray-300 rounded-lg px-4 py-2 mt-2 w-full"
+                  placeholder="Your answer here"
+                />
+              </div>
+
+              {/* Question 10 */}
+              <div className="mb-6">
+                <h3 className="font-semibold">10. Compiling ensures that the code is error-free and optimized. (True/False)</h3>
+                <input
+                  type="text"
+                  name="q10"
+                  onChange={(e) => handleChange(e, "q10")}
+                  className="border border-gray-300 rounded-lg px-4 py-2 mt-2 w-full"
+                  placeholder="True or False"
                 />
               </div>
 
@@ -142,7 +251,7 @@ const ProgrammingQuiz = () => {
             {score !== null && (
               <div className="mt-6 p-4 bg-green-100 rounded-lg">
                 <h3 className="font-semibold text-green-800">
-                  You scored {score} out of 5!
+                  You scored {score} out of 10!
                 </h3>
               </div>
             )}
