@@ -6,7 +6,7 @@ const MyCourseCard = ({ image, title, description, progress }) => {
 
     const handleButtonClick = () => {
         if (progress === 100) {
-          navigate('my-learning/view-certificate'); 
+          navigate('/my-learning/view-certificate'); 
         } else if (progress !== undefined) {
           navigate('/my-learning/my-course'); 
         } else {
