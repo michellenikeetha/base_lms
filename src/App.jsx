@@ -20,7 +20,10 @@ import CalendarPage from "./components/CalendarPage.jsx";
 import CourseContent from "./components/CourseContent.jsx";
 import ProgrammingQuiz from "./components/Quiz.jsx";
 import ViewCertificate from "./components/ViewCertificate.jsx";
+import PhilosophyCourseContentPage from "./components/PhilosophyCourseContentPage.jsx";
 import Clarity from '@microsoft/clarity';
+import PhilosophyQuiz from "./components/PhilosophyQuiz.jsx";
+import PhilosophyMyCoursePage from "./components/PhilosophyMyCoursePage.jsx";
 
 function App() {
   const projectId = "p1n97ondqi"
@@ -41,11 +44,14 @@ function App() {
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/announcements/ai-for-everyone" element={<AnnouncementDetail />} />
         <Route path="/my-learning" element={<MyLearning />} />
-        <Route path="/my-learning/my-course" element={<MyCoursePage />} />
+        {/* <Route path="/my-learning/my-course" element={<MyCoursePage />} /> */}
+        <Route path="/my-learning/my-course" element={<PhilosophyMyCoursePage />} />
         <Route path="/my-learning/grades" element={<MyGrades />} />
         <Route path="/calendar" element={<CalendarPage />} />
-        <Route path="/my-learning/my-course/course-content" element={<CourseContent />} />
-        <Route path="/quiz" element={<ProgrammingQuiz />} />
+        {/* <Route path="/my-learning/my-course/course-content" element={<CourseContent />} /> */}
+        <Route path="/my-learning/my-course/course-content" element={<PhilosophyCourseContentPage />} />
+        {/* <Route path="/quiz" element={<ProgrammingQuiz />} /> */}
+        <Route path="/quiz" element={<PhilosophyQuiz />} />
         <Route path="/my-learning/view-certificate" element={<ViewCertificate />} />
       </Routes>
     </Router>

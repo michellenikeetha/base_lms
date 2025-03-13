@@ -17,8 +17,8 @@ const MyLearning = () => {
   const inProgressCourses = [
     {
       image: course1,
-      title: 'Computer Science',
-      description: 'Are you newer to Programming? Start learning basics of Computer Science as a beginner',
+      title: 'Philosophy of Science',
+      description: 'Explore the fundamental principles of scientific reasoning, falsifiability, and the distinction between science and pseudo-science.',
     },
     {
       image: course2,
