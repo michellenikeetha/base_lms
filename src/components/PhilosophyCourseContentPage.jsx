@@ -170,7 +170,7 @@ const PhilosophyCourseContentPage = () => {
                 </p>
                 </section>
 
-                <section className="mb-8">
+                {/* <section className="mb-8">
                 <h2 className="text-xl font-semibold text-gray-800 mb-4">Practice Questions</h2>
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                     <ul className="space-y-4">
@@ -190,7 +190,8 @@ const PhilosophyCourseContentPage = () => {
                     ))}
                     </ul>
                 </div>
-                </section>
+                </section> */}
+                
             </main>
 
             <div className="bg-blue-100 p-6 mt-8 rounded-lg shadow-lg text-center">
